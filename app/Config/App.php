@@ -23,7 +23,7 @@ class App extends BaseConfig
 	 *
 	 * @var string
 	 */
-	public $baseURL = 'http://localhost:8080/';
+	public $baseURL = 'http://ci-test/';
 
 	/**
 	 * --------------------------------------------------------------------------
@@ -83,7 +83,7 @@ class App extends BaseConfig
 	 *
 	 * @var boolean
 	 */
-	public $negotiateLocale = false;
+	public $negotiateLocale = true;
 
 	/**
 	 * --------------------------------------------------------------------------
@@ -96,7 +96,7 @@ class App extends BaseConfig
 	 *
 	 * @var string[]
 	 */
-	public $supportedLocales = ['en'];
+	public $supportedLocales = ['en','ru'];
 
 	/**
 	 * --------------------------------------------------------------------------
