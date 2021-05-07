@@ -13,6 +13,22 @@ body{
     height:100vh;
 
 }
+
+.wrap{
+    position: fixed;
+    top:0px;
+    left:0px;
+    width:100vw;
+    height:100vh;
+    background-color: rgba(0,0,0,0.8);
+    display:none;
+    z-index:2000;
+    flex-direction: column;
+    justify-content: center;
+}
+.modal-wrap{
+    margin:auto;
+}
 #header{
     display: flex;
     position: fixed;

@@ -7,5 +7,6 @@ return [
     'panel_user_button'=>'I\'m USER',
     'panel_admin_button'=>'I\'m ADMIN',
     'or'=>'or',
-    'title'=>'Test - Welcome'
+    'title'=>'Test - Welcome',
+    'form_check_admin_button'=>'LOG IN'
 ];

@@ -12,10 +12,18 @@
 </canvas>
 <canvas id="canvas_admin"  style="display:none;position:fixed; top:0px; left:0px;height:100vh;width:100vw; z-index:-5">
 </canvas>
+	<div id="modal_wrap" class="wrap">
+		<div id="admin_form" class="panel dark modal-wrap p-15">
+
+			<div id="button_check_admin" class="button cursor-pointer opacity-hover" onClick="checkAdmin()">
+			<? echo lang('home.form_check_admin_button'); ?>
+			</div>
+		</div>
+	</div>
 	<div id='start' style="width:100vw;height:100vh; z-index:1000; background-color:white; padding:25%;font-size:48px; position:fixed; top:0px;left:0px" onClick="document.getElementById('start').style.display = 'none';">
 		Just CLICK
 	</div>
-	<div id="content" class="flex-lg-row flex-sm-col body-fill p-15">
+	<div id="content" class="flex-lg-row flex-sm-column body-fill p-15">
 		<div id="panel_user" class="panel p-15 cursor-pointer opacity-hover" onmouseenter="mouse_enter_user()"> 
 			<p>
 				<? echo lang('home.panel_user'); ?>
@@ -31,7 +39,7 @@
 			<p>		
 				<? echo lang('home.panel_admin'); ?>		
 			</p>
-			<div class="button cursor-pointer opacity-hover">
+			<div class="button cursor-pointer opacity-hover" onClick="formAdmin()">
 				<? echo lang('home.panel_admin_button'); ?>
 			</div>
 		</div>
@@ -43,7 +51,14 @@
   Ваш браузер не поддерживает элемент <code>audio</code>.
 </audio>
 	<script>
-
+		function checkAdmin(){
+			document.getElementById('modal_wrap').style.display = "none";
+			form.cc('checkAdmin');
+		}
+		function formAdmin(){
+			document.getElementById('modal_wrap').style.display = "flex";
+			form.cc('formADmin');
+		}
 		var choosen='none';
 		var reid;
 		var audio_src={
