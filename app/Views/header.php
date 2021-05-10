@@ -8,9 +8,14 @@
 	<link rel="stylesheet" href="<? echo base_url();?>/css/style.css">
 </head>
 <body>
-    <script src="<? echo base_url();?>/src/script/form.js"></script>
-
-
+    <script>
+        var base_url='<? echo base_url();?>';
+        var current_lang='<?= $lang?>';
+        
+        function redirect_vs_Lang(lang){
+            location.href='<? echo base_url();?>/lang/'+lang;
+        }
+    </script>
     <div id="header">
         <? if ($return_link == true)
             {
@@ -18,10 +23,10 @@
             }
         ?>
         <div id="lang">
-            <div class="lang cursor-pointer opacity-hover" lang="en" onClick="location.href='<? echo base_url();?>/lang/en';">
+            <div class="lang cursor-pointer opacity-hover" lang="en" onClick="redirect_vs_Lang('en')">
                 EN
             </div>
-            <div class="lang cursor-pointer opacity-hover" lang="ru" onClick="location.href='<? echo base_url();?>/lang/ru';">
+            <div class="lang cursor-pointer opacity-hover" lang="ru" onClick="redirect_vs_Lang('ru')">
                 RU
             </div>
         </div>

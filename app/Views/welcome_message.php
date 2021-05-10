@@ -1,26 +1,10 @@
-<!-- <!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Test - Welcome</title>
-	<link rel="stylesheet" href="<? echo base_url();?>/css/style.css">
-</head>
-<body> -->
+
 <canvas id="canvas_user"  style="display:none;position:fixed; top:0px; left:0px;height:100vh;width:100vw; z-index:-5">
 </canvas>
 <canvas id="canvas_admin"  style="display:none;position:fixed; top:0px; left:0px;height:100vh;width:100vw; z-index:-5">
 </canvas>
-	<div id="modal_wrap" class="wrap">
-		<div id="admin_form" class="panel dark modal-wrap p-15">
-
-			<div id="button_check_admin" class="button cursor-pointer opacity-hover" onClick="checkAdmin()">
-			<? echo lang('home.form_check_admin_button'); ?>
-			</div>
-		</div>
-	</div>
-	<div id='start' style="width:100vw;height:100vh; z-index:1000; background-color:white; padding:25%;font-size:48px; position:fixed; top:0px;left:0px" onClick="document.getElementById('start').style.display = 'none';">
+	
+	<div id='start' table="fff" style="width:100vw;height:100vh; z-index:1000; background-color:white; padding:25%;font-size:48px; position:fixed; top:0px;left:0px" onClick="document.getElementById('start').style.display = 'none';">
 		Just CLICK
 	</div>
 	<div id="content" class="flex-lg-row flex-sm-column body-fill p-15">
@@ -28,7 +12,7 @@
 			<p>
 				<? echo lang('home.panel_user'); ?>
 			</p>
-			<div class="button cursor-pointer opacity-hover">
+			<div class="button cursor-pointer opacity-hover" onClick="formUser()">
 				<? echo lang('home.panel_user_button'); ?>
 			</div>
 		</div>
@@ -39,25 +23,56 @@
 			<p>		
 				<? echo lang('home.panel_admin'); ?>		
 			</p>
-			<div class="button cursor-pointer opacity-hover" onClick="formAdmin()">
+			<div class="button cursor-pointer opacity-hover" onClick="formAdmin()" table="users">
 				<? echo lang('home.panel_admin_button'); ?>
 			</div>
 		</div>
 	</div>
-	<audio
-	id="aud"
-	loop
-  >
-  Ваш браузер не поддерживает элемент <code>audio</code>.
-</audio>
+	<audio	id="aud" loop>
+  		Ваш браузер не поддерживает элемент <code>audio</code>.
+	</audio>
 	<script>
-		function checkAdmin(){
-			document.getElementById('modal_wrap').style.display = "none";
-			form.cc('checkAdmin');
+		function formUser(){
+			form.setFormWrapF("users",['login','password'],[
+				{
+					type:'close-wrap',
+
+					title:{
+						en:'Close',
+						ru:'Назад'
+					}
+				},
+				{
+					type:'check',
+					title:{
+						en:'LOG IN',
+						ru:'ВОЙТИ'
+					}
+				}
+			]);
 		}
 		function formAdmin(){
-			document.getElementById('modal_wrap').style.display = "flex";
-			form.cc('formADmin');
+			// document.getElementById('modal_wrap').style.display = "flex";
+			// form.cc('formADmin');
+			// setFormWrapF:function(tableName,fieldsA,footer_buttons,style_class='')
+			form.setFormWrapF("users",['login','password'],[
+				{
+					type:'close-wrap',
+					title:{
+						en:'Close',
+						ru:'Назад'
+					}
+				},
+				{
+					type:'check',
+					url:'users/admin'
+					title:{
+						en:'LOG IN',
+						ru:'ВОЙТИ'
+					}
+				}
+			],'dark');
+			
 		}
 		var choosen='none';
 		var reid;
@@ -155,10 +170,9 @@
 			
 
 
-function mouse_enter_admin(){/*=============================================================================*/  
+function mouse_enter_admin(){  
 	if(choosen!='admin')
 	{
-		
 		document.getElementById('panel_admin').classList.add('dark');
 		document.getElementById('panel_user').classList.add('dark');
 		audio.pause();
@@ -272,5 +286,3 @@ function mouse_enter_admin(){/*=================================================
 	  
   }
     </script>
-</body>
-</html>
