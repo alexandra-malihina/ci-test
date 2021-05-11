@@ -11,7 +11,7 @@ class UserSeeder extends Seeder
 		//
 		$data=[
 			'login'=>'admin',
-			'password'=>password_hash('123465',PASSWORD_BCRYPT),
+			'password'=>password_hash('1234',PASSWORD_BCRYPT),
 			'role'=>'admin'
 
 		];

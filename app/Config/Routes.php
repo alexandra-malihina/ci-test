@@ -36,6 +36,17 @@ $routes->get('/', 'Home::index');
 $routes->get('lang/{locale}', 'Language::setLang'); //change lang
 $routes->post('getForm','FormController::getForm');
 
+
+$routes->post('check_user/user','UserController::checkUserRole/user');
+
+$routes->post('check_user/admin','UserController::checkUserRole/admin');
+
+
+$routes->get('admin','UserController::getAdmin');
+$routes->post('users/add','UserController::addUser');
+
+$routes->get('user','TestController::index');
+$routes->post('setAnswer','TestController::setAnswer');
 // $routes->get('/', 'Home::index');
 
 /*

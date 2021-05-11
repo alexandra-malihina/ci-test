@@ -20,6 +20,6 @@ class Language extends BaseController
         $session->remove('lang');
         $session->set('lang', $locale);
         //  echo ;
-         return redirect()->to($session->get('lastURL'));
+        return redirect()->to($session->get('lastURL'));
 	}
 }

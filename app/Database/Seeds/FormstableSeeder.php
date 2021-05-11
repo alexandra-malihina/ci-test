@@ -26,12 +26,12 @@ class FormstableSeeder extends Seeder
 					'errors'=>[
 						'en'=>[
 							'required'=>'Enter login',
-							'is_unique'=>'This login is already in the system',
+							'unique'=>'This login is already in the system',
 							'max_length'=>'The login is too long. (maximum length 10 characters)'
 						],
 						'ru'=>[
 							'required'=>'Введите логин',
-							'is_unique'=>'Такой логин уже есть в системе',
+							'unique'=>'Такой логин уже есть в системе',
 							'max_length'=>'Слишком длинный логин. (Максимальная длина - 10 символов)'
 						]
 					]
@@ -53,7 +53,7 @@ class FormstableSeeder extends Seeder
 							'max_length'=>'The password is too long. (maximum length 7 characters)'
 						],
 						'ru'=>[
-							'required'=>'Введите логин',
+							'required'=>'Введите пароль',
 							'max_length'=>'Слишком длинный пароль. (Максимальная длина - 7 символов)'
 						]
 					]

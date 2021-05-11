@@ -11,7 +11,9 @@
     <script>
         var base_url='<? echo base_url();?>';
         var current_lang='<?= $lang?>';
-        
+        var server_message=<? echo json_encode($message)?>;
+        // var server_message=<?=$message ?>;
+        console.log(server_message);
         function redirect_vs_Lang(lang){
             location.href='<? echo base_url();?>/lang/'+lang;
         }
@@ -19,7 +21,7 @@
     <div id="header">
         <? if ($return_link == true)
             {
-                echo "<p>".lang('header.return_link')."</p>";
+                echo "<a href='".base_url()."'>".lang('header.return_link')."</a>";
             }
         ?>
         <div id="lang">

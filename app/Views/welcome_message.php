@@ -12,7 +12,7 @@
 			<p>
 				<? echo lang('home.panel_user'); ?>
 			</p>
-			<div class="button cursor-pointer opacity-hover" onClick="formUser()">
+			<div class="button cursor-pointer opacity-hover" id="checkuser" onClick="formUser()">
 				<? echo lang('home.panel_user_button'); ?>
 			</div>
 		</div>
@@ -23,7 +23,7 @@
 			<p>		
 				<? echo lang('home.panel_admin'); ?>		
 			</p>
-			<div class="button cursor-pointer opacity-hover" onClick="formAdmin()" table="users">
+			<div class="button cursor-pointer opacity-hover" id="checkadmin" onClick="formAdmin()" table="users">
 				<? echo lang('home.panel_admin_button'); ?>
 			</div>
 		</div>
@@ -36,7 +36,7 @@
 			form.setFormWrapF("users",['login','password'],[
 				{
 					type:'close-wrap',
-
+					button_type:'reset',
 					title:{
 						en:'Close',
 						ru:'Назад'
@@ -44,12 +44,13 @@
 				},
 				{
 					type:'check',
+					button_type:'submit',
 					title:{
 						en:'LOG IN',
 						ru:'ВОЙТИ'
 					}
 				}
-			]);
+			],base_url+'/check_user/user');
 		}
 		function formAdmin(){
 			// document.getElementById('modal_wrap').style.display = "flex";
@@ -58,6 +59,7 @@
 			form.setFormWrapF("users",['login','password'],[
 				{
 					type:'close-wrap',
+					button_type:'reset',
 					title:{
 						en:'Close',
 						ru:'Назад'
@@ -65,13 +67,13 @@
 				},
 				{
 					type:'check',
-					url:'users/admin'
+					button_type:'submit',
 					title:{
 						en:'LOG IN',
 						ru:'ВОЙТИ'
 					}
 				}
-			],'dark');
+			],base_url+'/check_user/admin','dark');
 			
 		}
 		var choosen='none';
